@@ -122,6 +122,7 @@
   }
 }
 
+/* Animation delays */
 .animate-delay-100 {
   animation-delay: 100ms;
 }
@@ -140,4 +141,68 @@
 
 .animate-delay-500 {
   animation-delay: 500ms;
+}
+
+/* Typing animation for code blocks */
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #45CFDD;
+  width: 0;
+  animation: typing 4s steps(80) 1s forwards,
+             blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #45CFDD }
+}
+
+/* Parallax hover effect */
+.hover-card {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Skill card animations */
+.skill-card {
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient animations */
+.gradient-animation {
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Float animation */
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) }
+  50% { transform: translateY(-10px) }
+  100% { transform: translateY(0px) }
 }
