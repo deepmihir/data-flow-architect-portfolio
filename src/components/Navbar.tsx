@@ -29,6 +29,7 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('experience')} className="hover:text-data-blue transition-colors">Experience</button>
           <button onClick={() => scrollToSection('projects')} className="hover:text-data-blue transition-colors">Projects</button>
           <button onClick={() => scrollToSection('skills')} className="hover:text-data-blue transition-colors">Skills</button>
+          <button onClick={() => scrollToSection('blogs')} className="hover:text-data-blue transition-colors">Blogs</button>
           <button onClick={() => scrollToSection('contact')} className="hover:text-data-blue transition-colors">Contact</button>
         </div>
         
@@ -48,6 +49,7 @@ const Navbar = () => {
             <button onClick={() => scrollToSection('experience')} className="py-2 hover:text-data-blue transition-colors">Experience</button>
             <button onClick={() => scrollToSection('projects')} className="py-2 hover:text-data-blue transition-colors">Projects</button>
             <button onClick={() => scrollToSection('skills')} className="py-2 hover:text-data-blue transition-colors">Skills</button>
+            <button onClick={() => scrollToSection('blogs')} className="py-2 hover:text-data-blue transition-colors">Blogs</button>
             <button onClick={() => scrollToSection('contact')} className="py-2 hover:text-data-blue transition-colors">Contact</button>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
@@ -120,6 +119,23 @@
     content: '';
     @apply absolute w-1.5 h-1.5 rounded-full bg-data-teal -left-8 top-3;
   }
+
+  /* Blog card specific styles */
+  .blog-card {
+    @apply relative overflow-hidden border border-border rounded-lg transition-all duration-300;
+  }
+  
+  .blog-card:hover {
+    @apply shadow-lg transform -translate-y-1;
+  }
+  
+  .blog-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .blog-card:hover .blog-card-overlay {
+    @apply opacity-100;
+  }
 }
 
 /* Animation delays */
@@ -205,4 +221,73 @@
   0% { transform: translateY(0px) }
   50% { transform: translateY(-10px) }
   100% { transform: translateY(0px) }
+}
+
+/* Blog card hover effects */
+.blog-card-zoom {
+  @apply overflow-hidden;
+}
+
+.blog-card-zoom img {
+  @apply transition-transform duration-700;
+}
+
+.blog-card-zoom:hover img {
+  @apply transform scale-110;
+}
+
+/* Read more link animation */
+.read-more-link {
+  @apply relative inline-flex items-center;
+}
+
+.read-more-link::after {
+  content: '';
+  @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-data-teal transition-all duration-300;
+}
+
+.read-more-link:hover::after {
+  @apply w-full;
+}
+
+.read-more-link svg {
+  @apply transition-transform duration-200;
+}
+
+.read-more-link:hover svg {
+  @apply transform translate-x-1;
+}
+
+/* Blog card shine effect */
+.blog-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.75s;
+}
+
+.blog-shine:hover::before {
+  animation: shine 0.75s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
 }
