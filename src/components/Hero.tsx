@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GitHub, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -34,7 +34,7 @@ const Hero = () => {
               <Linkedin size={20} />
             </a>
             <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-data-blue transition-colors">
-              <GitHub size={20} />
+              <Github size={20} />
             </a>
             <a href="mailto:deepmihir@gmail.com" aria-label="Email" className="hover:text-data-blue transition-colors">
               <Mail size={20} />

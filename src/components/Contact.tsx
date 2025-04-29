@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, GitHub } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -63,7 +63,7 @@ const Contact = () => {
               
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-data-blue/10 flex items-center justify-center mr-4">
-                  <GitHub className="text-data-blue" />
+                  <Github className="text-data-blue" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">GitHub</p>
