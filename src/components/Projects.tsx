@@ -53,6 +53,17 @@ const ProjectCard: React.FC<ProjectProps> = ({
 const Projects = () => {
   const projects = [
     {
+      title: "DB-GPT for Datomica",
+      company: "End-to-End Product Development",
+      description: [
+        "Built a SaaS product DB-GPT for Datomica - a powerful AI-powered chat interface for enterprise databases that enables business users to interact with complex datasets using natural language.",
+        "Implemented intelligent context awareness, query history, and multi-turn dialogue for in-depth analysis, reducing dependency on technical teams for ad-hoc data needs.",
+        "Accelerated decision-making by making data more accessible and enhanced data literacy across departments. Live deployment actively used by the Datomica team."
+      ],
+      technologies: ["Python", "FastAPI", "PostgreSQL", "ReactJS", "TypeScript", "Tailwind CSS", "Google Gemini", "MCP", "Langgraph"],
+      icon: <Database size={24} className="text-data-blue" />
+    },
+    {
       title: "MLS Data Pipeline",
       company: "Invitation Homes",
       description: [

@@ -13,7 +13,7 @@ const Hero = () => {
             <span className="text-gradient">DEEP KATBAMNA</span>
           </h1>
           <h2 className="text-2xl md:text-3xl font-medium opacity-0 animate-fade-in animate-delay-100">
-            Data Engineer
+            Lead Data Stack Developer
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl opacity-0 animate-fade-in animate-delay-200">
             Specializing in building end-to-end data pipelines, optimizing data integration, 
@@ -38,9 +38,6 @@ const Hero = () => {
             </a>
             <a href="mailto:deepmihir@gmail.com" aria-label="Email" className="hover:text-data-blue transition-colors transform hover:scale-125 duration-300">
               <Mail size={20} />
-            </a>
-            <a href="tel:+919924066755" aria-label="Phone" className="hover:text-data-blue transition-colors transform hover:scale-125 duration-300">
-              <Phone size={20} />
             </a>
           </div>
         </div>

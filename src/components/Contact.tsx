@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, FileText } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -50,7 +50,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
           <div className="transform transition-all duration-500 hover:translate-y-[-5px]">
             <p className="text-lg mb-6">
-              Feel free to reach out if you're looking for a data engineer, have questions, or just want to connect.
+              Feel free to reach out if you're looking for a lead data stack developer, have questions, or just want to connect.
             </p>
             
             <div className="space-y-4">
@@ -66,17 +66,6 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-center transform transition-all duration-300 hover:translate-x-2">
-                <div className="w-12 h-12 rounded-full bg-data-blue/10 flex items-center justify-center mr-4 animate-pulse">
-                  <Phone className="text-data-blue" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <a href="tel:+919924066755" className="hover:text-data-blue">
-                    +91 9924066755
-                  </a>
-                </div>
-              </div>
               
               <div className="flex items-center transform transition-all duration-300 hover:translate-x-2">
                 <div className="w-12 h-12 rounded-full bg-data-blue/10 flex items-center justify-center mr-4 animate-pulse">
@@ -108,6 +97,18 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground">GitHub</p>
                   <a href="https://github.com/deepmihir" target="_blank" rel="noopener noreferrer" className="hover:text-data-blue">
                     github.com/deepmihir
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-center transform transition-all duration-300 hover:translate-x-2">
+                <div className="w-12 h-12 rounded-full bg-data-blue/10 flex items-center justify-center mr-4 animate-pulse">
+                  <FileText className="text-data-blue" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Medium</p>
+                  <a href="https://medium.com/@deepmihir" target="_blank" rel="noopener noreferrer" className="hover:text-data-blue">
+                    medium.com/@deepmihir
                   </a>
                 </div>
               </div>

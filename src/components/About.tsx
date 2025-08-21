@@ -10,7 +10,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
           <div className="md:col-span-2 space-y-4">
             <p className="text-lg">
-              I'm Deep Katbamna, a Data Engineer with expertise in building robust data pipelines and 
+              I'm Deep Katbamna, a Lead Data Stack Developer with expertise in building robust data pipelines and 
               implementing modern data architecture solutions for enterprise organizations.
             </p>
             <p>

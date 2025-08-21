@@ -14,6 +14,12 @@ interface Blog {
 const Blogs = () => {
   const blogs: Blog[] = [
     {
+      title: "Build, Run & Schedule dbt Models — All Inside Snowflake!",
+      description: "A comprehensive guide on leveraging Snowflake's native capabilities to build, execute, and schedule dbt models directly within the platform for streamlined data transformations.",
+      url: "https://medium.com/@deepmihir/build-run-schedule-dbt-models-all-inside-snowflake-a2c8f8e4e2b6",
+      date: "April 10, 2024"
+    },
+    {
       title: "Understanding MCP (Model Context Protocol) by simple example",
       description: "Exploring the Model Context Protocol concept through practical examples and implementation details, making complex AI interactions more accessible.",
       url: "https://medium.com/@deepmihir/understanding-mcp-model-context-protocol-by-simple-example-c6cefa4c18d9",
@@ -24,12 +30,6 @@ const Blogs = () => {
       description: "How to implement efficient, scalable data pipelines using AWS Fargate's serverless computing platform for modern data engineering workflows.",
       url: "https://medium.com/@deepmihir/leveraging-aws-fargate-for-scalable-and-server-less-data-engineering-56fb6c021183",
       date: "February 22, 2024"
-    },
-    {
-      title: "Unveiling Snowflake Cortex: Bringing AI and ML Capabilities to Snowflake Data Cloud",
-      description: "An in-depth look at how Snowflake Cortex integrates AI and machine learning capabilities into the Snowflake Data Cloud ecosystem.",
-      url: "https://medium.com/@deepmihir/unveiling-snowflake-cortex-bringing-ai-and-ml-capabilities-to-snowflake-data-cloud-9cb9b8505485",
-      date: "January 10, 2024"
     }
   ];
 
