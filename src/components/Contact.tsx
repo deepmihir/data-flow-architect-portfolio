@@ -2,6 +2,8 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, Github, FileText } from 'lucide-react';
 import { useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -13,21 +15,30 @@ const Contact = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const { toast } = useToast();
   
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormState(prev => ({ ...prev, [id]: value }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formState);
-      setIsSubmitting(false);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formState
+      });
+
+      if (error) throw error;
+
       setSubmitted(true);
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      
       setFormState({
         name: '',
         email: '',
@@ -35,11 +46,20 @@ const Contact = () => {
         message: '',
       });
       
-      // Reset success message after 3 seconds
+      // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitted(false);
-      }, 3000);
-    }, 1000);
+      }, 5000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly at deepmihir@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
