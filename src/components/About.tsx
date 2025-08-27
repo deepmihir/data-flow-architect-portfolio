@@ -43,7 +43,7 @@ const About = () => {
               <div className="space-y-6 flex-grow">
                 <div>
                   <p className="text-muted-foreground">Experience</p>
-                  <p className="text-xl font-medium">3+ Years</p>
+                  <p className="text-xl font-medium">4+ Years</p>
                 </div>
                 
                 <div>
