@@ -1,8 +1,7 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, FileText } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, FileText } from 'lucide-react';
 import { useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -13,7 +12,6 @@ const Contact = () => {
     message: '',
   });
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
   
@@ -22,44 +20,30 @@ const Contact = () => {
     setFormState(prev => ({ ...prev, [id]: value }));
   };
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: formState
-      });
-
-      if (error) throw error;
-
-      setSubmitted(true);
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      
-      setFormState({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
-    } catch (error) {
-      console.error('Error sending message:', error);
-      toast({
-        title: "Failed to send message",
-        description: "Please try again or contact me directly at deepmihir@gmail.com",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:deepmihir@gmail.com?subject=${encodeURIComponent(formState.subject)}&body=${encodeURIComponent(`From: ${formState.name} (${formState.email})\n\n${formState.message}`)}`;
+    
+    window.open(mailtoLink, '_blank');
+    
+    setSubmitted(true);
+    toast({
+      title: "Opening email client",
+      description: "Your default email app will open to send the message.",
+    });
+    
+    setFormState({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+    
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 5000);
   };
   
   return (
@@ -198,10 +182,9 @@ const Contact = () => {
                     </div>
                     <button
                       type="submit"
-                      disabled={isSubmitting}
-                      className={`w-full bg-data-blue hover:bg-data-blue/90 text-white font-medium py-2 px-4 rounded-md transition-colors transform transition-transform duration-300 hover:scale-[1.02] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      className="w-full bg-data-blue hover:bg-data-blue/90 text-white font-medium py-2 px-4 rounded-md transition-colors transform transition-transform duration-300 hover:scale-[1.02]"
                     >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      Send Message
                     </button>
                   </form>
                 )}
