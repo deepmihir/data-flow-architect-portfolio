@@ -1,0 +1,18 @@
+# Deep Katbamna — Data Engineer Portfolio
+
+> Professional portfolio of Deep Katbamna, a Data Engineer specializing in scalable data pipelines, cloud data platforms (AWS, Snowflake), DBT transformations, and modern data architecture.
+
+Deep Katbamna is a Data Engineer with 4+ years of experience building enterprise data infrastructure. The site showcases experience, projects, technical skills, and writing on data engineering topics including Snowflake, dbt, Airflow, and AWS Glue.
+
+## Pages
+
+- [Home](/): Overview of Deep Katbamna with hero intro, about, experience, projects, skills, blogs, and contact sections.
+
+## Sections
+
+- [About](/#about): Background and quick stats.
+- [Experience](/#experience): Roles at Intellytics Solutions and prior data engineering positions.
+- [Projects](/#projects): Selected data engineering projects and case studies.
+- [Skills](/#skills): Tools and technologies — Snowflake, dbt, Airflow, AWS Glue, Python, SQL.
+- [Blogs](/#blogs): Articles on data engineering practice.
+- [Contact](/#contact): Get in touch via email — deepmihir@gmail.com.
