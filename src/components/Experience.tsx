@@ -95,10 +95,26 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 const Experience = () => {
   const experiences = [
     {
-      title: "Data Engineer",
+      title: "Senior Data Engineer",
+      company: "Kenexai",
+      location: "Ahmedabad, India",
+      period: "May 2026 - Present",
+      description: [
+        "Designed and implemented enterprise-scale credit risk and card analytics platform using Snowflake, DBT Core, Airflow, and AWS.",
+        "Built automated ingestion pipelines for bureau data, customer accounts, statement history, and card portfolio datasets from multiple external providers.",
+        "Developed scalable ELT frameworks processing sensitive PCI and PII data while ensuring governance, security, and compliance standards.",
+        "Engineered credit score calculation and customer risk segmentation models supporting lending and portfolio management decisions.",
+        "Designed dimensional and analytical data models for own-brand and co-brand card products, enabling downstream reporting and risk analytics.",
+        "Orchestrated end-to-end data workflows using Apache Airflow and DBT Core, improving reliability and reducing manual intervention.",
+        "Optimized Snowflake storage and compute performance for large-scale financial datasets and operational reporting workloads.",
+        "Implemented data quality validation, monitoring, and reconciliation frameworks to ensure accuracy across critical financial data pipelines."
+      ]
+    },
+    {
+      title: "Senior Data Engineer",
       company: "Intellytics Solutions",
       location: "Ahmedabad, India",
-      period: "Feb 2023 - Present",
+      period: "Feb 2023 - Apr 2026",
       description: [
         "Built scalable data pipelines for 800+ MLS sources using AWS Glue, Airflow, DBT and Snowflake to support property acquisition and maintenance workflows.",
         "Designed API-based ingestion systems for JSON/metadata from distributed MLS feeds, enabling standardized downstream processing and schema harmonization.",
@@ -123,6 +139,7 @@ const Experience = () => {
         link: "https://github.com/deepmihir/2025Hackathon-Team-11"
       }
     },
+
     {
       title: "Freelance Data Engineer",
       company: "Jupiter Healthcare",
