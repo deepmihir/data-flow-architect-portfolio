@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Badge } from './ui/badge';
+import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Database, FileText } from 'lucide-react';
+import { Database, FileText, Brain, Layers, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ProjectProps {
   title: string;
@@ -51,17 +52,63 @@ const ProjectCard: React.FC<ProjectProps> = ({
 };
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
+    {
+      title: "Credit Risk & Card Analytics Platform",
+      company: "Kenexai",
+      description: [
+        "Designed a cloud-based credit risk and card analytics platform supporting consumer lending operations with scalable ingestion and transformation pipelines.",
+        "Processed bureau data, customer accounts, statement history, and card portfolio datasets from multiple external providers while securely handling PCI and PII data.",
+        "Built credit score calculation and customer risk segmentation workflows orchestrated end-to-end with Airflow and DBT Core on Snowflake."
+      ],
+      technologies: ["Snowflake", "DBT Core", "Apache Airflow", "Python", "SQL", "AWS"],
+      icon: <Layers size={24} className="text-data-blue" />
+    },
+    {
+      title: "QueryGuardAI - GenAI Impact Analysis",
+      company: "Intellytics Solutions",
+      description: [
+        "Led MVP development of a GenAI-powered data governance platform using LLMs and RAG to automate impact analysis and governance workflows.",
+        "Built intelligent lineage generation and integrated GitHub App workflows to detect schema changes and analyze downstream dependencies.",
+        "Reduced manual governance effort by enabling near real-time impact analysis across DBT models and Snowflake assets."
+      ],
+      technologies: ["OpenAI", "Python", "RAG", "Vector Search", "GitHub App", "DBT", "Snowflake", "AWS"],
+      icon: <Brain size={24} className="text-data-blue" />
+    },
+    {
+      title: "AI-Driven Scope Generation for BTR",
+      company: "Intellytics Solutions",
+      description: [
+        "Built an AI-powered automation pipeline to generate and attach scope templates within Salesforce Budget Walk workflows for BTR acquisition projects.",
+        "Fine-tuned Claude Sonnet on historical scope documents to identify community-specific patterns and eliminate repetitive manual drafting.",
+        "Reduced scope creation effort from days to hours and won 1st place for highest operational impact solution in the corporate hackathon."
+      ],
+      technologies: ["AWS Bedrock", "Claude Sonnet", "Prompt Engineering", "Salesforce API", "Python"],
+      icon: <Brain size={24} className="text-data-blue" />
+    },
     {
       title: "DB-GPT for Datomica",
       company: "End-to-End Product Development",
       description: [
-        "Built a SaaS product DB-GPT for Datomica - a powerful AI-powered chat interface for enterprise databases that enables business users to interact with complex datasets using natural language.",
-        "Implemented intelligent context awareness, query history, and multi-turn dialogue for in-depth analysis, reducing dependency on technical teams for ad-hoc data needs.",
-        "Accelerated decision-making by making data more accessible and enhanced data literacy across departments. Live deployment actively used by the Datomica team."
+        "Built DB-GPT - an AI-powered chat interface for enterprise databases that enables business users to interact with complex datasets using natural language.",
+        "Implemented intelligent context awareness, query history, and multi-turn dialogue for in-depth analysis, reducing dependency on technical teams.",
+        "Accelerated decision-making by making data more accessible. Live deployment actively used by the Datomica team."
       ],
       technologies: ["Python", "FastAPI", "PostgreSQL", "ReactJS", "TypeScript", "Tailwind CSS", "Google Gemini", "MCP", "Langgraph"],
       icon: <Database size={24} className="text-data-blue" />
+    },
+    {
+      title: "SSAS Cube to Snowflake Semantic Migration",
+      company: "Intellytics Solutions",
+      description: [
+        "Modernized legacy SSAS cube architecture by migrating measures, dimensions, and calculated metrics into Snowflake schema-level objects.",
+        "Designed semantic views replicating legacy cube functionality while improving flexibility and performance.",
+        "Eliminated metric inconsistencies across BI reports and reduced dependency on cube-based infrastructure."
+      ],
+      technologies: ["Snowflake", "SQL", "Data Modeling", "Semantic View", "SSAS Cube"],
+      icon: <Layers size={24} className="text-data-blue" />
     },
     {
       title: "MLS Data Pipeline",
@@ -120,13 +167,16 @@ const Projects = () => {
     }
   ];
 
+  const TOP_COUNT = 3;
+  const visibleProjects = showAll ? projects : projects.slice(0, TOP_COUNT);
+
   return (
     <section id="projects" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="section-title">Key Projects</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {projects.map((project, idx) => (
+          {visibleProjects.map((project, idx) => (
             <ProjectCard
               key={idx}
               title={project.title}
@@ -137,6 +187,27 @@ const Projects = () => {
             />
           ))}
         </div>
+
+        {projects.length > TOP_COUNT && (
+          <div className="flex justify-center mt-10">
+            <Button
+              variant="outline"
+              onClick={() => setShowAll(!showAll)}
+              className="group gap-2"
+            >
+              {showAll ? (
+                <>
+                  Show less <ChevronUp className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
+                </>
+              ) : (
+                <>
+                  Show {projects.length - TOP_COUNT} more projects{' '}
+                  <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
