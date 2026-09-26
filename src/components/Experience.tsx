@@ -95,19 +95,17 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Data Engineer",
-      company: "Kenexai",
+      title: "Senior Data Engineer & Product Solution Architect",
+      company: "Kenexai · Product Solution Architect group",
       location: "Ahmedabad, India",
       period: "May 2026 - Present",
       description: [
-        "Designed and implemented enterprise-scale credit risk and card analytics platform using Snowflake, DBT Core, Airflow, and AWS.",
-        "Built automated ingestion pipelines for bureau data, customer accounts, statement history, and card portfolio datasets from multiple external providers.",
-        "Developed scalable ELT frameworks processing sensitive PCI and PII data while ensuring governance, security, and compliance standards.",
-        "Engineered credit score calculation and customer risk segmentation models supporting lending and portfolio management decisions.",
-        "Designed dimensional and analytical data models for own-brand and co-brand card products, enabling downstream reporting and risk analytics.",
-        "Orchestrated end-to-end data workflows using Apache Airflow and DBT Core, improving reliability and reducing manual intervention.",
-        "Optimized Snowflake storage and compute performance for large-scale financial datasets and operational reporting workloads.",
-        "Implemented data quality validation, monitoring, and reconciliation frameworks to ensure accuracy across critical financial data pipelines."
+        "Lead architecture and hands-on engineering for Agentworkx — Kenexai's accelerator for companies adopting AI agent capabilities through connectors, tools, RAG patterns, and a ready-to-extend framework.",
+        "Deliver internal training at Kenexai on modern data platforms, dbt/Snowflake patterns, and practical AI agent integration.",
+        "Build Snowflake and dbt platforms for a UK consumer finance engagement covering credit risk, affordability, and credit decisioning workflows.",
+        "Ingest bureau, card, and customer account datasets with PCI/PII controls, dimensional modeling, and governed ELT on AWS.",
+        "Engineer credit score calculation and customer risk segmentation models supporting lending and portfolio management decisions.",
+        "Orchestrate end-to-end pipelines with Apache Airflow and dbt Core, with data quality validation, monitoring, and reconciliation across critical financial datasets."
       ]
     },
     {

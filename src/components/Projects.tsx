@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Database, FileText, Brain, Layers, ChevronDown, ChevronUp } from 'lucide-react';
+import { Bot, Brain, Database, FileText, Layers, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ProjectProps {
   title: string;
@@ -13,19 +12,11 @@ interface ProjectProps {
   icon: React.ReactNode;
 }
 
-const ProjectCard: React.FC<ProjectProps> = ({
-  title,
-  company,
-  description,
-  technologies,
-  icon
-}) => {
+const ProjectCard: React.FC<ProjectProps> = ({ title, company, description, technologies, icon }) => {
   return (
     <Card className="h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1 overflow-hidden">
       <CardHeader className="relative flex flex-row items-center gap-4 pb-2">
-        <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
-          {icon}
-        </div>
+        <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">{icon}</div>
         <div>
           <CardTitle className="text-xl">{title}</CardTitle>
           <CardDescription>{company}</CardDescription>
@@ -56,30 +47,41 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Agentworkx",
+      company: "Kenexai · Product Solution Architect group",
+      description: [
+        "Lead architecture and hands-on engineering for an accelerator that helps companies adopt AI agent capabilities faster.",
+        "Design connector and tool frameworks, RAG integration patterns, and a ready-to-extend platform teams can build on.",
+        "Balance product solution architecture with production engineering — from reference implementations to client-ready delivery."
+      ],
+      technologies: ["Product Solution Architecture", "RAG", "LLMs", "Python", "AWS", "Connectors"],
+      icon: <Bot size={24} className="text-data-blue" />
+    },
+    {
       title: "Credit Risk & Card Analytics Platform",
-      company: "Kenexai",
+      company: "Kenexai · UK consumer finance delivery",
       description: [
         "Designed a cloud-based credit risk and card analytics platform supporting consumer lending operations with scalable ingestion and transformation pipelines.",
-        "Processed bureau data, customer accounts, statement history, and card portfolio datasets from multiple external providers while securely handling PCI and PII data.",
-        "Built credit score calculation and customer risk segmentation workflows orchestrated end-to-end with Airflow and DBT Core on Snowflake."
+        "Processed bureau data, customer accounts, statement history, and card portfolio datasets while securely handling PCI and PII data.",
+        "Built credit score calculation and customer risk segmentation workflows orchestrated end-to-end with Airflow and dbt Core on Snowflake."
       ],
-      technologies: ["Snowflake", "DBT Core", "Apache Airflow", "Python", "SQL", "AWS"],
+      technologies: ["Snowflake", "dbt Core", "Apache Airflow", "Python", "SQL", "AWS"],
       icon: <Layers size={24} className="text-data-blue" />
     },
     {
-      title: "QueryGuardAI - GenAI Impact Analysis",
+      title: "QueryGuardAI / ZaneAI",
       company: "Intellytics Solutions",
       description: [
         "Led MVP development of a GenAI-powered data governance platform using LLMs and RAG to automate impact analysis and governance workflows.",
         "Built intelligent lineage generation and integrated GitHub App workflows to detect schema changes and analyze downstream dependencies.",
-        "Reduced manual governance effort by enabling near real-time impact analysis across DBT models and Snowflake assets."
+        "Reduced manual governance effort by enabling near real-time impact analysis across dbt models and Snowflake assets."
       ],
-      technologies: ["OpenAI", "Python", "RAG", "Vector Search", "GitHub App", "DBT", "Snowflake", "AWS"],
+      technologies: ["OpenAI", "Python", "RAG", "Vector Search", "GitHub App", "dbt", "Snowflake", "AWS"],
       icon: <Brain size={24} className="text-data-blue" />
     },
     {
       title: "AI-Driven Scope Generation for BTR",
-      company: "Intellytics Solutions",
+      company: "Intellytics Solutions · Hackathon winner",
       description: [
         "Built an AI-powered automation pipeline to generate and attach scope templates within Salesforce Budget Walk workflows for BTR acquisition projects.",
         "Fine-tuned Claude Sonnet on historical scope documents to identify community-specific patterns and eliminate repetitive manual drafting.",
@@ -92,7 +94,7 @@ const Projects = () => {
       title: "DB-GPT for Datomica",
       company: "End-to-End Product Development",
       description: [
-        "Built DB-GPT - an AI-powered chat interface for enterprise databases that enables business users to interact with complex datasets using natural language.",
+        "Built DB-GPT — an AI-powered chat interface for enterprise databases that enables business users to interact with complex datasets using natural language.",
         "Implemented intelligent context awareness, query history, and multi-turn dialogue for in-depth analysis, reducing dependency on technical teams.",
         "Accelerated decision-making by making data more accessible. Live deployment actively used by the Datomica team."
       ],
@@ -112,42 +114,42 @@ const Projects = () => {
     },
     {
       title: "MLS Data Pipeline",
-      company: "Invitation Homes",
+      company: "Intellytics Solutions",
       description: [
         "Developed an end-to-end MLS data pipeline, integrating data from 800+ MLS sources for property acquisition and maintenance.",
-        "Designed a standardized ingestion and transformation framework using DBT, ensuring schema adaptability and data consistency.",
+        "Designed a standardized ingestion and transformation framework using dbt, ensuring schema adaptability and data consistency.",
         "Implemented Snowflake as the central repository for structured data, improving accessibility and governance."
       ],
-      technologies: ["Python", "Snowflake", "DBT", "Airflow", "AWS Glue", "S3"],
+      technologies: ["Python", "Snowflake", "dbt", "Airflow", "AWS Glue", "S3"],
       icon: <Database size={24} className="text-data-blue" />
     },
     {
       title: "Agile Data Ingestion & Reporting",
-      company: "Invitation Homes",
+      company: "Intellytics Solutions",
       description: [
-        "Automated data extraction from Jira via AWS Glue, staging it in S3 and transforming it using DBT for Agile reporting in Tableau.",
+        "Automated data extraction from Jira via AWS Glue, staging it in S3 and transforming it using dbt for Agile reporting in Tableau.",
         "Developed Airflow DAGs to orchestrate ingestion and processing, ensuring a 12% efficiency improvement in Agile metric tracking.",
         "Delivered a unified reporting solution for 200+ Agile metrics, streamlining sprint tracking and KPI monitoring."
       ],
-      technologies: ["Python", "Snowflake", "DBT", "Airflow", "AWS Glue", "S3"],
+      technologies: ["Python", "Snowflake", "dbt", "Airflow", "AWS Glue", "S3"],
       icon: <FileText size={24} className="text-data-blue" />
     },
     {
       title: "Platform Usage Dashboard",
-      company: "Invitation Homes",
+      company: "Intellytics Solutions",
       description: [
         "Designed an automated data pipeline to track usage metrics from 7+ sources, optimizing license management and usage tracking.",
         "Implemented structured ingestion and full reload strategies, reducing stale data occurrences and improving query performance by 30%.",
         "Built a real-time Usage Dashboard, empowering leadership with data insights and platform utilization analytics."
       ],
-      technologies: ["Python", "Snowflake", "AWS Glue", "Airflow", "DBT"],
+      technologies: ["Python", "Snowflake", "AWS Glue", "Airflow", "dbt"],
       icon: <FileText size={24} className="text-data-blue" />
     },
     {
       title: "Atlan Data Catalog Integration",
-      company: "Invitation Homes",
+      company: "Intellytics Solutions",
       description: [
-        "Integrated Atlan with Snowflake, Tableau, DBT, and Power BI, cataloging 125K+ assets and automating metadata ingestion for 1K+ assets.",
+        "Integrated Atlan with Snowflake, Tableau, dbt, and Power BI, cataloging 125K+ assets and automating metadata ingestion for 1K+ assets.",
         "Developed custom workflows using APIs to extract, enrich, and sync metadata, improving data governance and accessibility.",
         "Implemented schema change alerts and failure monitoring, ensuring reliability and proactive issue resolution."
       ],
@@ -156,7 +158,7 @@ const Projects = () => {
     },
     {
       title: "Healthcare MDM Integration",
-      company: "Jupyter Healthcare (Freelance)",
+      company: "Jupiter Healthcare (Freelance)",
       description: [
         "Integrated data from 300+ healthcare systems into a unified Master Data Management (MDM) system using Reltio MDM.",
         "Developed ETL pipelines to extract, transform, and load data from Reltio MDM into Snowflake using Kafka, ensuring real-time data consistency.",
@@ -167,7 +169,7 @@ const Projects = () => {
     }
   ];
 
-  const TOP_COUNT = 3;
+  const TOP_COUNT = 4;
   const visibleProjects = showAll ? projects : projects.slice(0, TOP_COUNT);
 
   return (
@@ -175,7 +177,7 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title">Key Projects</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-12">
           {visibleProjects.map((project, idx) => (
             <ProjectCard
               key={idx}
@@ -190,11 +192,7 @@ const Projects = () => {
 
         {projects.length > TOP_COUNT && (
           <div className="flex justify-center mt-10">
-            <Button
-              variant="outline"
-              onClick={() => setShowAll(!showAll)}
-              className="group gap-2"
-            >
+            <Button variant="outline" onClick={() => setShowAll(!showAll)} className="group gap-2">
               {showAll ? (
                 <>
                   Show less <ChevronUp className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />

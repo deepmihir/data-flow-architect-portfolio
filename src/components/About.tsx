@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About = () => {
@@ -6,25 +5,39 @@ const About = () => {
     <section id="about" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="section-title">About Me</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
           <div className="md:col-span-2 space-y-4">
             <p className="text-lg">
-              I'm Deep Katbamna, a Lead Data Stack Developer with expertise in building robust data pipelines and 
-              implementing modern data architecture solutions for enterprise organizations.
+              I&apos;m Deep Katbamna, a Senior Data Engineer and Product Solution Architect in Kenexai&apos;s Product
+              Solution Architect group in Ahmedabad. I combine platform architecture with hands-on engineering —
+              leading Agentworkx while delivering production data platforms for regulated industries.
             </p>
             <p>
-              With experience at companies like Intellytics Solutions and Jupiter Healthcare, I've
-              specialized in designing and optimizing data pipelines that handle large volumes of data
-              from diverse sources. I have a strong focus on data quality, governance, and building
-              scalable solutions using cloud technologies.
+              At Kenexai, I lead architecture and engineering for{' '}
+              <span className="font-medium">Agentworkx</span>, an accelerator that helps companies adopt AI agent
+              capabilities through connectors, tools, RAG patterns, and a ready-to-extend framework. I also deliver
+              internal training for teams adopting modern data and AI practices.
             </p>
             <p>
-              My technical expertise includes Snowflake, Python, DBT, Airflow, and AWS services like 
-              Glue and S3. I'm passionate about solving complex data challenges and delivering 
-              data solutions that drive business value.
+              On the client delivery side, I build Snowflake and dbt platforms for a UK consumer finance engagement —
+              credit risk, affordability, and credit decisioning — handling bureau and card data with PCI/PII governance,
+              dimensional modeling, Airflow orchestration, and data quality monitoring.
             </p>
-            
+            <p>
+              Previously at Intellytics Solutions, I built enterprise pipelines across 800+ MLS sources, cataloged
+              125K+ assets, and led GenAI governance initiatives. I write about data engineering and AI on{' '}
+              <a
+                href="https://medium.com/@deepmihir"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-data-blue hover:underline"
+              >
+                Medium
+              </a>
+              .
+            </p>
+
             <div className="pt-4">
               <h3 className="text-xl font-semibold mb-2">Education</h3>
               <div className="data-card">
@@ -35,33 +48,33 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div>
             <div className="data-card h-full flex flex-col">
               <h3 className="text-xl font-semibold mb-4">Quick Stats</h3>
-              
+
               <div className="space-y-6 flex-grow">
                 <div>
                   <p className="text-muted-foreground">Experience</p>
-                  <p className="text-xl font-medium">4+ Years</p>
+                  <p className="text-xl font-medium">5+ Years</p>
                 </div>
-                
+
                 <div>
                   <p className="text-muted-foreground">MLS Sources Integrated</p>
                   <p className="text-xl font-medium">800+</p>
                 </div>
-                
+
                 <div>
                   <p className="text-muted-foreground">Assets Cataloged</p>
                   <p className="text-xl font-medium">125K+</p>
                 </div>
-                
+
                 <div>
-                  <p className="text-muted-foreground">Healthcare Systems Unified</p>
-                  <p className="text-xl font-medium">300+</p>
+                  <p className="text-muted-foreground">Corporate Hackathon</p>
+                  <p className="text-xl font-medium">1st Place</p>
                 </div>
               </div>
-              
+
               <div className="mt-6 pt-6 border-t">
                 <h4 className="font-semibold mb-2">Certifications</h4>
                 <ul className="space-y-2">
